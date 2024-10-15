@@ -1,0 +1,32 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7g8h-9i10j11k12l13",
+    "score": 8500,
+    "createdAt": "2024-10-14T12:45:30Z",
+    "game": "Super Mario"
+  },
+  {
+    "id": "m1n2o3p4-q5r6-7s8t-9u10v11w12x13",
+    "score": 9200,
+    "createdAt": "2024-10-13T14:25:10Z",
+    "game": "Zelda"
+  },
+  {
+    "id": "d3f4g5h6-i7j8-9k10l11m12n13",
+    "score": 7800,
+    "createdAt": "2024-10-12T10:15:20Z",
+    "game": "Pac-Man"
+  },
+  {
+    "id": "p4q5r6s7-t8u9-0v11w12x13y14",
+    "score": 8600,
+    "createdAt": "2024-10-11T16:35:45Z",
+    "game": "Tetris"
+  },
+  {
+    "id": "v5w6x7y8-z9a0-1b12c13d14e15",
+    "score": 9500,
+    "createdAt": "2024-10-10T18:50:25Z",
+    "game": "Minecraft"
+  }
+]

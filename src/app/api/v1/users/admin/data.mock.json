@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1a2b3c4d-5e6f-7g8h-9i10j11k12l13",
+    "name": "Alice Johnson",
+    "username": "alicej",
+    "image": "https://picsum.photos/200",
+    "email": "alicej@example.com",
+    "role": "admin",
+    "rank": 1,
+    "highScore": 9800,
+    "scores": 15000,
+    "isBlocked": false
+  },
+  {
+    "id": "2b3c4d5e-6f7g-8h9i-10j11k12l13m14",
+    "name": "Bob Smith",
+    "username": "bobsmith",
+    "image": "https://picsum.photos/201",
+    "email": "bobsmith@example.com",
+    "role": "moderator",
+    "rank": 2,
+    "highScore": 8700,
+    "scores": 14000,
+    "isBlocked": false
+  },
+  {
+    "id": "3c4d5e6f-7g8h-9i10j-11k12l13m14n15",
+    "name": "Charlie Davis",
+    "username": "charlied",
+    "image": "https://picsum.photos/202",
+    "email": "charlied@example.com",
+    "role": "user",
+    "rank": 3,
+    "highScore": 8600,
+    "scores": 13500,
+    "isBlocked": true
+  },
+  {
+    "id": "4d5e6f7g-8h9i-10j11k-12l13m14n15o16",
+    "name": "Diana Moore",
+    "username": "dianam",
+    "image": "https://picsum.photos/203",
+    "email": "dianam@example.com",
+    "role": "user",
+    "rank": 4,
+    "highScore": 8200,
+    "scores": 13000,
+    "isBlocked": false
+  },
+  {
+    "id": "5e6f7g8h-9i10j-11k12l-13m14n15o16p17",
+    "name": "Eve Thomas",
+    "username": "evet",
+    "image": "https://picsum.photos/204",
+    "email": "evet@example.com",
+    "role": "admin",
+    "rank": 5,
+    "highScore": 9100,
+    "scores": 12500,
+    "isBlocked": true
+  },
+  {
+    "id": "6f7g8h9i-10j11k-12l13m-14n15o16p17q18",
+    "name": "Frank Brown",
+    "username": "frankb",
+    "image": "https://picsum.photos/205",
+    "email": "frankb@example.com",
+    "role": "user",
+    "rank": 6,
+    "highScore": 8000,
+    "scores": 12000,
+    "isBlocked": false
+  },
+  {
+    "id": "7g8h9i10-11j12k-13l14m-15n16o17p18q19",
+    "name": "Grace Wilson",
+    "username": "gracew",
+    "image": "https://picsum.photos/206",
+    "email": "gracew@example.com",
+    "role": "moderator",
+    "rank": 7,
+    "highScore": 7700,
+    "scores": 11000,
+    "isBlocked": false
+  }
+]

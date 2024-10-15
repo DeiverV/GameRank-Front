@@ -1,0 +1,12 @@
+{
+  "id": "1f8a4f72-6e9f-42bf-a517-c68c4adfa4c8",
+  "name": "John Doe",
+  "username": "johndoe123",
+  "image": "https://picsum.photos/200",
+  "email": "johndoe@example.com",
+  "role": "admin",
+  "rank": 1,
+  "highScore": 9800,
+  "scores": 15000,
+  "isBlocked": false
+}
