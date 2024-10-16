@@ -4,8 +4,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section>
-      <h1>Auth Pages</h1>
+    <section className="h-screen w-screen grid place-items-center">
       {children}
     </section>
   );

@@ -5,7 +5,10 @@ export async function DELETE(
   { params }: { params: { scoreId: string } }
 ) {
   console.log(params.scoreId);
-  return NextResponse.json({
-    success: true,
-  });
+  return NextResponse.json(
+    {
+      success: true,
+    },
+    { status: 204 }
+  );
 }
