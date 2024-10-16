@@ -1,6 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import data from "./data.mock.json";
 
-export async function GET() {
-  return NextResponse.json(data);
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { page: number; limit: number } }
+) {
+  const slicedData = data.slice(0, params.limit);
+  return NextResponse.json(slicedData, { status: 200 });
 }

@@ -5,9 +5,7 @@ export async function PATCH(
   { params }: { params: { userId: string } }
 ) {
   console.log(params.userId);
-  return NextResponse.json({
-    success: true,
-  });
+  return NextResponse.json("", { status: 204 });
 }
 
 export async function DELETE(
@@ -15,7 +13,5 @@ export async function DELETE(
   { params }: { params: { userId: string } }
 ) {
   console.log(params.userId);
-  return NextResponse.json({
-    success: true,
-  });
+  return NextResponse.json("", { status: 204 });
 }
