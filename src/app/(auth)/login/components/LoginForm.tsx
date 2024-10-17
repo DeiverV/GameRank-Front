@@ -3,16 +3,28 @@ import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import Link from "next/link";
 import React from "react";
+import { useLoginForm } from "../hooks";
+import { useLoginMutation } from "@/src/store/services";
 
 export const LoginForm = () => {
+  const { formFields, submitButton, formValues } = useLoginForm();
+  const [login] = useLoginMutation();
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const res = await login(formValues);
+    console.log(res.data);
+  };
+
   return (
     <div className="grid gap-3">
-      <form className="grid gap-3">
-        <Input label="Email" size="sm" type="email" />
-        <Input label="Password" size="sm" type="password" />
+      <form className="grid gap-3" onSubmit={onSubmit}>
+        <Input size="sm" {...formFields.email} />
+        <Input size="sm" {...formFields.password} />
         <Button
           className="bg-gameRanks_secondary text-gameRanks_neutral_1"
-          onClick={(e) => e.preventDefault()}
+          type="submit"
+          {...submitButton}
         >
           Login
         </Button>
