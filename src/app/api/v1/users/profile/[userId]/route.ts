@@ -7,9 +7,9 @@ export async function GET() {
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: { username: string } }
 ) {
   const formData = await request.formData();
-  console.log(formData, params.userId);
+  console.log(formData, params.username);
   return NextResponse.json(data, { status: 200 });
 }

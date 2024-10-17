@@ -3,7 +3,7 @@ import data from "./data.mock.json";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { page: number; limit: number } }
+  { params }: { params: { userId:string, page: number; limit: number } }
 ) {
   const slicedData = data.slice(0, params.limit);
   return NextResponse.json(slicedData, { status: 200 });

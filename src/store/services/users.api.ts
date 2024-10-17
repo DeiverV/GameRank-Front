@@ -8,10 +8,10 @@ export const usersApi = createApi({
   }),
   endpoints: (builder) => ({
     getUserScores: builder.query<UserScore[], string>({
-      query: (userId) => `users/scores/${userId}`,
+      query: (username) => `users/scores/${username}`,
     }),
     getUserDetails: builder.query<UserDetails, string>({
-      query: (userId) => `users/profile/${userId}`,
+      query: (username) => `users/profile/${username}`,
     }),
     updateUser: builder.mutation<
       void,
