@@ -1,21 +1,22 @@
-"use client";
-import { Button } from "@nextui-org/button";
-import { Card } from "@nextui-org/card";
-import { Input } from "@nextui-org/input";
 import { NextPage } from "next";
+import { LoginForm } from "./components";
+import { AppDescription } from "../components";
+import { Card, CardBody } from "@nextui-org/card";
 
 const Login: NextPage = () => {
   return (
-      <Card className="h-fit w-[450px] p-2 gap-5">
-        <h1>Login</h1>
-        <form className="grid gap-2">
-          <Input label="email" size="sm" type="email" />
-          <Input label="password" size="sm" type="password" />
-          <Button size="sm" color="primary" onClick={(e) => e.preventDefault()}>
-            Login
-          </Button>
-        </form>
+    <div className="w-full h-full flex flex-col lg:flex-row justify-around items-center">
+      <div className="grid lg:w-[50%] xl:w-[60%] h-[45%] lg:h-full place-items-center">
+        <AppDescription />
+      </div>
+
+      <Card className="w-full h-[55%] lg:h-fit lg:w-[400px] lg:py-14 px-5 shadow-2xl grid place-items-center">
+        <CardBody>
+          <h1 className="font-semibold mb-4">Log In</h1>
+          <LoginForm />
+        </CardBody>
       </Card>
+    </div>
   );
 };
 

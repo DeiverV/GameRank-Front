@@ -1,9 +1,9 @@
-import "../styles/globals.css";
 import { Metadata } from "next";
-
 import { Providers } from "./providers";
+import { poppins } from "@/src/config/fonts";
 
-import { fontSans } from "@/src/config/fonts";
+import "../styles/globals.css";
+import "../styles/fonts.css";
 
 export const metadata: Metadata = {
   icons: {
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <head />
-      <body className={`${fontSans.variable} ${fontSans.variable} antialiased`}>
+      <body className={`${poppins.className}`}>
         <Providers>
           <main>{children}</main>
         </Providers>

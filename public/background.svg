@@ -1,0 +1,35 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_804_2903" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1080">
+<circle cx="540" cy="540" r="540" fill="url(#paint0_radial_804_2903)"/>
+</mask>
+<g mask="url(#mask0_804_2903)">
+<line x1="1079.5" y1="1080" x2="1079.5" y2="-6.55671e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="981.318" y1="1080" x2="981.318" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="883.136" y1="1080" x2="883.136" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="784.955" y1="1080" x2="784.955" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="686.772" y1="1080" x2="686.773" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="588.591" y1="1080" x2="588.591" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="490.409" y1="1080" x2="490.409" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="392.227" y1="1080" x2="392.227" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="294.045" y1="1080" x2="294.046" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="195.864" y1="1080" x2="195.864" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="97.6816" y1="1080" x2="97.6818" y2="-6.60427e-08" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="97.6819" x2="1080" y2="97.6819" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="195.864" x2="1080" y2="195.864" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="294.045" x2="1080" y2="294.045" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="392.227" x2="1080" y2="392.227" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="490.409" x2="1080" y2="490.409" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="588.591" x2="1080" y2="588.591" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="686.773" x2="1080" y2="686.773" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="784.955" x2="1080" y2="784.955" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="883.136" x2="1080" y2="883.136" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="981.318" x2="1080" y2="981.318" stroke="white" stroke-dasharray="3 3"/>
+<line x1="9.41014e-10" y1="1079.5" x2="1080" y2="1079.5" stroke="white" stroke-dasharray="3 3"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_804_2903" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(540 540) rotate(90) scale(540)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
