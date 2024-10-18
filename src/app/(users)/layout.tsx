@@ -5,9 +5,9 @@ export default function UsersLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="bg-gameRanks_primary min-h-screen">
+    <section className="bg-gameRanks_primary min-h-screen relative">
       <Navbar />
-      <div className="mx-[5%] lg:mx-[10%] py-5">{children}</div>
+      <div className="mx-[5%] lg:mx-[15%] xl:mx-[22%] py-5">{children}</div>
     </section>
   );
 }

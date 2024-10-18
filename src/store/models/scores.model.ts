@@ -1,3 +1,9 @@
+export interface GetUserScores {
+  page: number;
+  limit: number;
+  username: string;
+}
+
 export interface CreateScorePayload {
   playerId: string;
   score: string;

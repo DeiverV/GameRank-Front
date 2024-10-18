@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { UpdateUserPayload, UserDetails, UserScore } from "../models";
+import {
+  GetUserScores,
+  UpdateUserPayload,
+  UserDetails,
+  UserScore,
+} from "../models";
 
 export const usersApi = createApi({
   reducerPath: "usersApi",
@@ -7,8 +12,12 @@ export const usersApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
   }),
   endpoints: (builder) => ({
-    getUserScores: builder.query<UserScore[], string>({
-      query: (username) => `users/scores/${username}`,
+    getUserScores: builder.query<UserScore[], GetUserScores>({
+      query: ({ limit, page, username }) => ({
+        url: `users/scores/${username}`,
+        method: "GET",
+        params: { page, limit },
+      }),
     }),
     getUserDetails: builder.query<UserDetails, string>({
       query: (username) => `users/profile/${username}`,

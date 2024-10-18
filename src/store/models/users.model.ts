@@ -5,9 +5,8 @@ export interface UserDetails {
   image: string;
   email: string;
   role: string;
-  rank: string;
-  highScore: string;
-  scores: string;
+  rank: number;
+  highScore: number;
   isBlocked: string;
 }
 

@@ -22,7 +22,7 @@ export const NavItem = ({ icon, text, to }: Props) => {
       href={to}
     >
       {icon}
-      {text}
+      <div className="hidden md:block">{text}</div>
     </Link>
   );
 };
