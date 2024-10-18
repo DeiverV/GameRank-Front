@@ -25,7 +25,7 @@ export const Navbar = () => {
           <NavItem
             icon={<PiRankingDuotone size={20} />}
             text="Leaderboard"
-            to="/users/scores/leaderboard"
+            to="/scores/leaderboard"
           />
         </li>
         <li>

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useMemo } from "react";
 
 interface Props {
   icon: JSX.Element;
@@ -11,8 +11,7 @@ interface Props {
 
 export const NavItem = ({ icon, text, to }: Props) => {
   const pathname = usePathname();
-
-  const isActive = pathname.startsWith(to);
+  const isActive = useMemo(() => pathname.startsWith(to), [pathname, to]);
 
   return (
     <Link

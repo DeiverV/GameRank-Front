@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import data from "./data.mock.json";
+import { GetLeaderboardPayload } from "@/src/store/models";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { page: number; limit: number; game: string } }
+  { params }: { params: GetLeaderboardPayload }
 ) {
-  const slicedData = data
-    .slice(0, params.limit)
-    .filter((user) => user.game === params.game);
+  const slicedData = data;
 
   return NextResponse.json(slicedData, { status: 200 });
 }

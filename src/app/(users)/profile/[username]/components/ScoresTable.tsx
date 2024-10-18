@@ -36,7 +36,7 @@ export const ScoresTable = () => {
     limit: rowsPerPage,
     page,
   });
-  
+
   const pages = data ? Math.ceil(data?.length / rowsPerPage) : 0;
 
   useEffect(() => {
@@ -45,6 +45,21 @@ export const ScoresTable = () => {
 
     router.replace(`${pathname}?${query.toString()}`);
   }, [page, searchParams]);
+
+  const columns = [
+    {
+      key: "score",
+      label: "Score",
+    },
+    {
+      key: "game",
+      label: "Game",
+    },
+    {
+      key: "createdAt",
+      label: "Creation Date",
+    },
+  ];
 
   return (
     <Table
@@ -57,6 +72,7 @@ export const ScoresTable = () => {
         <Pagination
           showControls
           showShadow
+          variant="flat"
           classNames={{
             base: "w-full",
             next: "bg-gameRanks_primary",
@@ -68,10 +84,8 @@ export const ScoresTable = () => {
         />
       }
     >
-      <TableHeader>
-        <TableColumn key="score">Score</TableColumn>
-        <TableColumn key="game">Game</TableColumn>
-        <TableColumn key="createdAt">Date</TableColumn>
+      <TableHeader columns={columns}>
+        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
       <TableBody items={data ?? []} isLoading={isLoading}>
         {(item) => (

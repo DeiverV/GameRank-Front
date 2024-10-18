@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { CreateScorePayload, LeaderboardPlayer } from "../models";
+import {
+  CreateScorePayload,
+  GetLeaderboardPayload,
+  LeaderboardPlayer,
+} from "../models";
 
 export const scoresApi = createApi({
   reducerPath: "scoresApi",
@@ -7,8 +11,12 @@ export const scoresApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
   }),
   endpoints: (builder) => ({
-    getLeaderboard: builder.query<LeaderboardPlayer[], void>({
-      query: () => "scores/leaderboard",
+    getLeaderboard: builder.query<LeaderboardPlayer[], GetLeaderboardPayload>({
+      query: (params) => ({
+        url: "scores/leaderboard",
+        method: "GET",
+        params,
+      }),
     }),
     createScore: builder.mutation<CreateScorePayload, void>({
       query: (body) => ({

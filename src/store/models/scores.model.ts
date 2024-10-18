@@ -1,4 +1,4 @@
-export interface GetUserScores {
+export interface GetUserScoresPayload {
   page: number;
   limit: number;
   username: string;
@@ -7,6 +7,12 @@ export interface GetUserScores {
 export interface CreateScorePayload {
   playerId: string;
   score: string;
+  game: string;
+}
+
+export interface GetLeaderboardPayload {
+  page: number;
+  limit: number;
   game: string;
 }
 

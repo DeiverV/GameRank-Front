@@ -24,4 +24,5 @@ export const store = configureStore({
     ]),
 });
 
+export type IRootState = ReturnType<typeof store.getState>;
 setupListeners(store.dispatch);
