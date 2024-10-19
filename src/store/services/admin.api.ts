@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { UserDetailsToAdmin } from "../models";
+import { AllUsersAdminResponse, GetAllUsersAdminPayload } from "../models";
 
 export const adminApi = createApi({
   reducerPath: "adminApi",
@@ -7,8 +7,11 @@ export const adminApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
   }),
   endpoints: (builder) => ({
-    getAllUsers: builder.query<UserDetailsToAdmin[], void>({
-      query: () => "users/admin",
+    getAllUsers: builder.query<AllUsersAdminResponse, GetAllUsersAdminPayload>({
+      query: (params) => ({
+        url: "users/admin",
+        params,
+      }),
     }),
     deleteScore: builder.mutation<void, string>({
       query: (scoreId) => ({

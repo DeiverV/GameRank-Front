@@ -6,6 +6,5 @@ export async function GET(
   request: NextRequest,
   { params }: { params: GetUserScoresPayload }
 ) {
-  const slicedData = data.slice(0, params.limit);
-  return NextResponse.json(slicedData, { status: 200 });
+  return NextResponse.json(data, { status: 200 });
 }

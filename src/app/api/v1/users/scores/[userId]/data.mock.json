@@ -1,32 +1,128 @@
-[
-  {
-    "id": "a1b2c3d4-e5f6-7g8h-9i10j11k12l13",
-    "score": 8500,
-    "createdAt": "2024-10-14T12:45:30Z",
-    "game": "Super Mario"
-  },
-  {
-    "id": "m1n2o3p4-q5r6-7s8t-9u10v11w12x13",
-    "score": 9200,
-    "createdAt": "2024-10-13T14:25:10Z",
-    "game": "Zelda"
-  },
-  {
-    "id": "d3f4g5h6-i7j8-9k10l11m12n13",
-    "score": 7800,
-    "createdAt": "2024-10-12T10:15:20Z",
-    "game": "Pac-Man"
-  },
-  {
-    "id": "p4q5r6s7-t8u9-0v11w12x13y14",
-    "score": 8600,
-    "createdAt": "2024-10-11T16:35:45Z",
-    "game": "Tetris"
-  },
-  {
-    "id": "v5w6x7y8-z9a0-1b12c13d14e15",
-    "score": 9500,
-    "createdAt": "2024-10-10T18:50:25Z",
-    "game": "Minecraft"
-  }
-]
+{
+  "page": 1,
+  "limit": 20,
+  "totalCount": 200,
+  "totalPages": 5,
+  "data": [
+    {
+      "id": "uuid1",
+      "score": 20,
+      "createdAt": "2022-02-02T21:12:34.000Z",
+      "game": "Mario Bros!"
+    },
+    {
+      "id": "uuid2",
+      "score": 45,
+      "createdAt": "2022-03-03T18:10:24.000Z",
+      "game": "Super Mario World"
+    },
+    {
+      "id": "uuid3",
+      "score": 78,
+      "createdAt": "2022-04-04T17:11:14.000Z",
+      "game": "Legend of Zelda"
+    },
+    {
+      "id": "uuid4",
+      "score": 55,
+      "createdAt": "2022-05-05T15:09:04.000Z",
+      "game": "Donkey Kong"
+    },
+    {
+      "id": "uuid5",
+      "score": 32,
+      "createdAt": "2022-06-06T14:08:54.000Z",
+      "game": "Metroid"
+    },
+    {
+      "id": "uuid6",
+      "score": 90,
+      "createdAt": "2022-07-07T13:07:44.000Z",
+      "game": "Kirby's Adventure"
+    },
+    {
+      "id": "uuid7",
+      "score": 64,
+      "createdAt": "2022-08-08T12:06:34.000Z",
+      "game": "Star Fox"
+    },
+    {
+      "id": "uuid8",
+      "score": 22,
+      "createdAt": "2022-09-09T11:05:24.000Z",
+      "game": "F-Zero"
+    },
+    {
+      "id": "uuid9",
+      "score": 88,
+      "createdAt": "2022-10-10T10:04:14.000Z",
+      "game": "Mario Kart"
+    },
+    {
+      "id": "uuid10",
+      "score": 41,
+      "createdAt": "2022-11-11T09:03:04.000Z",
+      "game": "Super Smash Bros."
+    },
+    {
+      "id": "uuid11",
+      "score": 75,
+      "createdAt": "2022-12-12T08:02:54.000Z",
+      "game": "Mario Party"
+    },
+    {
+      "id": "uuid12",
+      "score": 53,
+      "createdAt": "2023-01-13T07:01:44.000Z",
+      "game": "Pikmin"
+    },
+    {
+      "id": "uuid13",
+      "score": 96,
+      "createdAt": "2023-02-14T06:00:34.000Z",
+      "game": "Luigi's Mansion"
+    },
+    {
+      "id": "uuid14",
+      "score": 29,
+      "createdAt": "2023-03-15T05:00:24.000Z",
+      "game": "Yoshi's Island"
+    },
+    {
+      "id": "uuid15",
+      "score": 67,
+      "createdAt": "2023-04-16T04:59:14.000Z",
+      "game": "Animal Crossing"
+    },
+    {
+      "id": "uuid16",
+      "score": 38,
+      "createdAt": "2023-05-17T03:58:04.000Z",
+      "game": "Paper Mario"
+    },
+    {
+      "id": "uuid17",
+      "score": 84,
+      "createdAt": "2023-06-18T02:57:54.000Z",
+      "game": "Fire Emblem"
+    },
+    {
+      "id": "uuid18",
+      "score": 61,
+      "createdAt": "2023-07-19T01:56:44.000Z",
+      "game": "Wario Land"
+    },
+    {
+      "id": "uuid19",
+      "score": 49,
+      "createdAt": "2023-08-20T00:55:34.000Z",
+      "game": "Punch-Out!!"
+    },
+    {
+      "id": "uuid20",
+      "score": 85,
+      "createdAt": "2023-09-21T23:54:24.000Z",
+      "game": "Splatoon"
+    }
+  ]
+}

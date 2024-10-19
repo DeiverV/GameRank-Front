@@ -1,18 +1,12 @@
-export interface GetUserScoresPayload {
-  page: number;
-  limit: number;
-  username: string;
-}
+import { Pagination } from "@/src/models";
 
 export interface CreateScorePayload {
-  playerId: string;
+  userId: string;
   score: string;
   game: string;
 }
 
-export interface GetLeaderboardPayload {
-  page: number;
-  limit: number;
+export interface GetLeaderboardPayload extends Pagination {
   game: string;
 }
 
@@ -24,4 +18,12 @@ export interface LeaderboardPlayer {
   email: string;
   game: string;
   highestScore: string;
+}
+
+export interface LeaderboardResponse {
+  page: number;
+  limit: number;
+  totalCount: number;
+  totalPages: number;
+  data: LeaderboardPlayer[];
 }

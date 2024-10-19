@@ -1,9 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 
-// Create Score
+/**Creates An Score */
 export async function POST(request: NextRequest) {
-  const body = await request.json();
-  console.log(body);
-
+  // const body = await request.json();
   return NextResponse.json({}, { status: 201 });
 }

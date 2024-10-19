@@ -27,7 +27,10 @@ const Profile: NextPage = () => {
           />
 
           <div className="flex items-center justify-center gap-4">
-            <InformationCard counter={data.highScore} title="Highest Score" />
+            <InformationCard
+              counter={data.highestScore}
+              title="Highest Score"
+            />
             <InformationCard counter={data.rank} title="Global Ranking" />
           </div>
         </div>

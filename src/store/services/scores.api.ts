@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {
   CreateScorePayload,
   GetLeaderboardPayload,
-  LeaderboardPlayer,
+  LeaderboardResponse,
 } from "../models";
 
 export const scoresApi = createApi({
@@ -11,21 +11,31 @@ export const scoresApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
   }),
   endpoints: (builder) => ({
-    getLeaderboard: builder.query<LeaderboardPlayer[], GetLeaderboardPayload>({
+    getGames: builder.query<string[], void>({
+      query: () => "scores/games",
+    }),
+    getLeaderboard: builder.query<LeaderboardResponse, GetLeaderboardPayload>({
       query: (params) => ({
         url: "scores/leaderboard",
         method: "GET",
         params,
       }),
     }),
-    createScore: builder.mutation<CreateScorePayload, void>({
-      query: (body) => ({
-        url: "scores",
+    createScore: builder.mutation<void, CreateScorePayload>({
+      query: ({ game, score, userId }) => ({
+        url: `scores/${userId}`,
         method: "POST",
-        body,
+        body: {
+          game,
+          score,
+        },
       }),
     }),
   }),
 });
 
-export const { useCreateScoreMutation, useGetLeaderboardQuery } = scoresApi;
+export const {
+  useCreateScoreMutation,
+  useGetLeaderboardQuery,
+  useGetGamesQuery,
+} = scoresApi;

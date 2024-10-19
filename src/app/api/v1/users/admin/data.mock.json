@@ -1,86 +1,228 @@
-[
-  {
-    "id": "1a2b3c4d-5e6f-7g8h-9i10j11k12l13",
-    "name": "Alice Johnson",
-    "username": "alicej",
-    "image": "https://picsum.photos/200",
-    "email": "alicej@example.com",
-    "role": "admin",
-    "rank": 1,
-    "highScore": 9800,
-    "scores": 15000,
-    "isBlocked": false
-  },
-  {
-    "id": "2b3c4d5e-6f7g-8h9i-10j11k12l13m14",
-    "name": "Bob Smith",
-    "username": "bobsmith",
-    "image": "https://picsum.photos/201",
-    "email": "bobsmith@example.com",
-    "role": "moderator",
-    "rank": 2,
-    "highScore": 8700,
-    "scores": 14000,
-    "isBlocked": false
-  },
-  {
-    "id": "3c4d5e6f-7g8h-9i10j-11k12l13m14n15",
-    "name": "Charlie Davis",
-    "username": "charlied",
-    "image": "https://picsum.photos/202",
-    "email": "charlied@example.com",
-    "role": "user",
-    "rank": 3,
-    "highScore": 8600,
-    "scores": 13500,
-    "isBlocked": true
-  },
-  {
-    "id": "4d5e6f7g-8h9i-10j11k-12l13m14n15o16",
-    "name": "Diana Moore",
-    "username": "dianam",
-    "image": "https://picsum.photos/203",
-    "email": "dianam@example.com",
-    "role": "user",
-    "rank": 4,
-    "highScore": 8200,
-    "scores": 13000,
-    "isBlocked": false
-  },
-  {
-    "id": "5e6f7g8h-9i10j-11k12l-13m14n15o16p17",
-    "name": "Eve Thomas",
-    "username": "evet",
-    "image": "https://picsum.photos/204",
-    "email": "evet@example.com",
-    "role": "admin",
-    "rank": 5,
-    "highScore": 9100,
-    "scores": 12500,
-    "isBlocked": true
-  },
-  {
-    "id": "6f7g8h9i-10j11k-12l13m-14n15o16p17q18",
-    "name": "Frank Brown",
-    "username": "frankb",
-    "image": "https://picsum.photos/205",
-    "email": "frankb@example.com",
-    "role": "user",
-    "rank": 6,
-    "highScore": 8000,
-    "scores": 12000,
-    "isBlocked": false
-  },
-  {
-    "id": "7g8h9i10-11j12k-13l14m-15n16o17p18q19",
-    "name": "Grace Wilson",
-    "username": "gracew",
-    "image": "https://picsum.photos/206",
-    "email": "gracew@example.com",
-    "role": "moderator",
-    "rank": 7,
-    "highScore": 7700,
-    "scores": 11000,
-    "isBlocked": false
-  }
-]
+{
+  "page": 1,
+  "limit": 20,
+  "totalCount": 200,
+  "totalPages": 5,
+  "data": [
+    {
+      "id": "uuid1",
+      "name": "Jhon Doe Doe",
+      "username": "JhonDoe",
+      "image": "https://via.placeholder.com/150",
+      "email": "jhonDoe@gmail.com",
+      "role": "ADMIN",
+      "rank": 2000,
+      "highestScore": 75,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid2",
+      "name": "Jane Smith",
+      "username": "JaneS",
+      "image": "https://via.placeholder.com/150",
+      "email": "janeS@gmail.com",
+      "role": "PLAYER",
+      "rank": 1500,
+      "highestScore": 90,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid3",
+      "name": "Michael Johnson",
+      "username": "MikeJ",
+      "image": "https://via.placeholder.com/150",
+      "email": "mikeJ@gmail.com",
+      "role": "PLAYER",
+      "rank": 1800,
+      "highestScore": 88,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid4",
+      "name": "Emily Davis",
+      "username": "EmilyD",
+      "image": "https://via.placeholder.com/150",
+      "email": "emilyD@gmail.com",
+      "role": "ADMIN",
+      "rank": 2200,
+      "highestScore": 95,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid5",
+      "name": "Chris Brown",
+      "username": "ChrisB",
+      "image": "https://via.placeholder.com/150",
+      "email": "chrisB@gmail.com",
+      "role": "PLAYER",
+      "rank": 1700,
+      "highestScore": 65,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid6",
+      "name": "Jessica Miller",
+      "username": "JessM",
+      "image": "https://via.placeholder.com/150",
+      "email": "jessM@gmail.com",
+      "role": "PLAYER",
+      "rank": 1900,
+      "highestScore": 110,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid7",
+      "name": "Daniel Wilson",
+      "username": "DanW",
+      "image": "https://via.placeholder.com/150",
+      "email": "danW@gmail.com",
+      "role": "ADMIN",
+      "rank": 1600,
+      "highestScore": 78,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid8",
+      "name": "Sarah Moore",
+      "username": "SarahM",
+      "image": "https://via.placeholder.com/150",
+      "email": "sarahM@gmail.com",
+      "role": "PLAYER",
+      "rank": 2100,
+      "highestScore": 130,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid9",
+      "name": "David Taylor",
+      "username": "DaveT",
+      "image": "https://via.placeholder.com/150",
+      "email": "daveT@gmail.com",
+      "role": "PLAYER",
+      "rank": 2000,
+      "highestScore": 125,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid10",
+      "name": "Megan Anderson",
+      "username": "MegA",
+      "image": "https://via.placeholder.com/150",
+      "email": "meganA@gmail.com",
+      "role": "ADMIN",
+      "rank": 1400,
+      "highestScore": 150,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid11",
+      "name": "Joshua Thomas",
+      "username": "JoshT",
+      "image": "https://via.placeholder.com/150",
+      "email": "joshT@gmail.com",
+      "role": "PLAYER",
+      "rank": 1750,
+      "highestScore": 135,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid12",
+      "name": "Olivia Jackson",
+      "username": "OliviaJ",
+      "image": "https://via.placeholder.com/150",
+      "email": "oliviaJ@gmail.com",
+      "role": "PLAYER",
+      "rank": 2300,
+      "highestScore": 145,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid13",
+      "name": "Matthew White",
+      "username": "MattW",
+      "image": "https://via.placeholder.com/150",
+      "email": "mattW@gmail.com",
+      "role": "ADMIN",
+      "rank": 1300,
+      "highestScore": 85,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid14",
+      "name": "Sophia Harris",
+      "username": "SophH",
+      "image": "https://via.placeholder.com/150",
+      "email": "sophH@gmail.com",
+      "role": "PLAYER",
+      "rank": 2400,
+      "highestScore": 160,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid15",
+      "name": "Ryan Lee",
+      "username": "RyanL",
+      "image": "https://via.placeholder.com/150",
+      "email": "ryanL@gmail.com",
+      "role": "ADMIN",
+      "rank": 1350,
+      "highestScore": 120,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid16",
+      "name": "Abigail Walker",
+      "username": "AbbyW",
+      "image": "https://via.placeholder.com/150",
+      "email": "abbyW@gmail.com",
+      "role": "PLAYER",
+      "rank": 2500,
+      "highestScore": 170,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid17",
+      "name": "James Hall",
+      "username": "JamesH",
+      "image": "https://via.placeholder.com/150",
+      "email": "jamesH@gmail.com",
+      "role": "PLAYER",
+      "rank": 2250,
+      "highestScore": 155,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid18",
+      "name": "Isabella Lewis",
+      "username": "BellaL",
+      "image": "https://via.placeholder.com/150",
+      "email": "bellaL@gmail.com",
+      "role": "ADMIN",
+      "rank": 1200,
+      "highestScore": 145,
+      "isBlocked": true
+    },
+    {
+      "id": "uuid19",
+      "name": "Chloe Scott",
+      "username": "ChloeS",
+      "image": "https://via.placeholder.com/150",
+      "email": "chloeS@gmail.com",
+      "role": "PLAYER",
+      "rank": 2600,
+      "highestScore": 180,
+      "isBlocked": false
+    },
+    {
+      "id": "uuid20",
+      "name": "Andrew Clark",
+      "username": "AndyC",
+      "image": "https://via.placeholder.com/150",
+      "email": "andyC@gmail.com",
+      "role": "ADMIN",
+      "rank": 1450,
+      "highestScore": 80,
+      "isBlocked": true
+    }
+  ]
+}

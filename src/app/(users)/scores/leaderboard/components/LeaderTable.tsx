@@ -34,8 +34,6 @@ export const LeaderTable = () => {
     page,
   });
 
-  const pages = data ? Math.ceil(data?.length / rowsPerPage) : 0;
-
   useEffect(() => {
     const query = new URLSearchParams(searchParams.toString());
     query.set("page", page.toString());
@@ -46,7 +44,7 @@ export const LeaderTable = () => {
   useEffect(() => {
     if (isLoading) return;
     if (isSuccess) {
-      dispatch(setTopLeaderboardUsers(data?.slice(0, 3) ?? []));
+      dispatch(setTopLeaderboardUsers(data?.data.slice(0, 3) ?? []));
     }
   }, [isLoading]);
 
@@ -109,7 +107,7 @@ export const LeaderTable = () => {
             prev: "bg-gameRanks_primary",
           }}
           page={page}
-          total={pages}
+          total={data?.totalPages ?? 0}
           onChange={(page) => setPage(page)}
         />
       }
@@ -117,7 +115,7 @@ export const LeaderTable = () => {
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody items={data ?? []} isLoading={isLoading}>
+      <TableBody items={data?.data ?? []} isLoading={isLoading}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (

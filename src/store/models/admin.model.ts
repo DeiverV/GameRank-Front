@@ -1,3 +1,5 @@
+import { Pagination } from "@/src/models";
+
 export interface UserDetailsToAdmin {
   id: string;
   name: string;
@@ -6,7 +8,16 @@ export interface UserDetailsToAdmin {
   email: string;
   role: string;
   rank: string;
-  highScore: string;
-  scores: string;
+  highestScore: string;
   isBlocked: string;
 }
+
+export interface AllUsersAdminResponse {
+  page: number;
+  limit: number;
+  totalCount: number;
+  totalPages: number;
+  data: UserDetailsToAdmin[];
+}
+
+export interface GetAllUsersAdminPayload extends Pagination {}

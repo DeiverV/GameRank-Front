@@ -37,8 +37,6 @@ export const ScoresTable = () => {
     page,
   });
 
-  const pages = data ? Math.ceil(data?.length / rowsPerPage) : 0;
-
   useEffect(() => {
     const query = new URLSearchParams(searchParams.toString());
     query.set("scoresPage", page.toString());
@@ -79,7 +77,7 @@ export const ScoresTable = () => {
             prev: "bg-gameRanks_primary",
           }}
           page={page}
-          total={pages}
+          total={data?.totalPages ?? 0}
           onChange={(page) => setPage(page)}
         />
       }
@@ -87,7 +85,7 @@ export const ScoresTable = () => {
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody items={data ?? []} isLoading={isLoading}>
+      <TableBody items={data?.data ?? []} isLoading={isLoading}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (

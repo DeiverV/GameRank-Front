@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {
-  GetUserScores,
+  GetUserScoresPayload,
   UpdateUserPayload,
   UserDetails,
-  UserScore,
+  UserScoresResponse,
 } from "../models";
 
 export const usersApi = createApi({
@@ -12,7 +12,7 @@ export const usersApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
   }),
   endpoints: (builder) => ({
-    getUserScores: builder.query<UserScore[], GetUserScores>({
+    getUserScores: builder.query<UserScoresResponse, GetUserScoresPayload>({
       query: ({ limit, page, username }) => ({
         url: `users/scores/${username}`,
         method: "GET",
@@ -22,14 +22,11 @@ export const usersApi = createApi({
     getUserDetails: builder.query<UserDetails, string>({
       query: (username) => `users/profile/${username}`,
     }),
-    updateUser: builder.mutation<
-      void,
-      { userId: string; body: UpdateUserPayload }
-    >({
-      query: ({ userId, body }) => ({
+    updateUser: builder.mutation<void, UpdateUserPayload>({
+      query: ({ image, username, userId }) => ({
         url: `users/profile/${userId}`,
         method: "POST",
-        body,
+        body: { image, username },
       }),
     }),
   }),

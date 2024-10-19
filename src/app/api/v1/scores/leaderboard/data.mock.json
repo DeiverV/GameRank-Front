@@ -1,47 +1,160 @@
-[
-  {
-    "id": "aaaaaa-54444-5551",
-    "name": "Frank Brown",
-    "username": "frankb",
-    "image": "https://picsum.photos/204",
-    "email": "frankb@example.com",
-    "game": "Minecraft",
-    "highestScore": 9300
-  },
-  {
-    "id": "aaaaaa-54444-5552",
-    "name": "Charlie Davis",
-    "username": "charlied",
-    "image": "https://picsum.photos/202",
-    "email": "charlied@example.com",
-    "game": "Pac-Man",
-    "highestScore": 9200
-  },
-  {
-    "id": "aaaaaa-54444-5553",
-    "name": "Alice Johnson",
-    "username": "alicej",
-    "image": "https://picsum.photos/200",
-    "email": "alicej@example.com",
-    "game": "Super Mario",
-    "highestScore": 9000
-  },
-  {
-    "id": "aaaaaa-54444-5554",
-    "name": "Bob Smith",
-    "username": "bobsmith",
-    "image": "https://picsum.photos/201",
-    "email": "bobsmith@example.com",
-    "game": "Zelda",
-    "highestScore": 8700
-  },
-  {
-    "id": "aaaaaa-54444",
-    "name": "Diana Moore",
-    "username": "dianam",
-    "image": "https://picsum.photos/203",
-    "email": "dianam@example.com",
-    "game": "Tetris",
-    "highestScore": 8600
-  }
-]
+{
+  "page": 1,
+  "limit": 20,
+  "totalCount": 200,
+  "totalPages": 5,
+  "data": [
+    {
+      "name": "Chloe Scott",
+      "username": "ChloeS",
+      "image": "https://via.placeholder.com/150",
+      "email": "chloeS@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 247
+    },
+    {
+      "name": "Jane Smith",
+      "username": "JaneSmith",
+      "image": "https://via.placeholder.com/150",
+      "email": "janeSmith@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 245
+    },
+    {
+      "name": "Andrew Clark",
+      "username": "AndyC",
+      "image": "https://via.placeholder.com/150",
+      "email": "andrewC@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 266
+    },
+    {
+      "name": "David Taylor",
+      "username": "DaveT",
+      "image": "https://via.placeholder.com/150",
+      "email": "davidT@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 284
+    },
+    {
+      "name": "Sophia Harris",
+      "username": "SophH",
+      "image": "https://via.placeholder.com/150",
+      "email": "sophiaH@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 95
+    },
+    {
+      "name": "Sarah Moore",
+      "username": "SarahM",
+      "image": "https://via.placeholder.com/150",
+      "email": "sarahM@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 210
+    },
+    {
+      "name": "Megan Anderson",
+      "username": "MegA",
+      "image": "https://via.placeholder.com/150",
+      "email": "meganA@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 54
+    },
+    {
+      "name": "Michael Johnson",
+      "username": "MikeJ",
+      "image": "https://via.placeholder.com/150",
+      "email": "mikeJ@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 312
+    },
+    {
+      "name": "Chris Brown",
+      "username": "ChrisB",
+      "image": "https://via.placeholder.com/150",
+      "email": "chrisB@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 89
+    },
+    {
+      "name": "Jessica Miller",
+      "username": "JessM",
+      "image": "https://via.placeholder.com/150",
+      "email": "jessicaM@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 157
+    },
+    {
+      "name": "Daniel Wilson",
+      "username": "DanW",
+      "image": "https://via.placeholder.com/150",
+      "email": "danW@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 192
+    },
+    {
+      "name": "Ryan Lee",
+      "username": "RyanL",
+      "image": "https://via.placeholder.com/150",
+      "email": "ryanL@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 198
+    },
+    {
+      "name": "Abigail Walker",
+      "username": "AbbyW",
+      "image": "https://via.placeholder.com/150",
+      "email": "abbyW@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 220
+    },
+    {
+      "name": "Olivia Jackson",
+      "username": "LivJ",
+      "image": "https://via.placeholder.com/150",
+      "email": "oliviaJ@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 215
+    },
+    {
+      "name": "Joshua Thomas",
+      "username": "JoshT",
+      "image": "https://via.placeholder.com/150",
+      "email": "joshT@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 142
+    },
+    {
+      "name": "Matthew White",
+      "username": "MattW",
+      "image": "https://via.placeholder.com/150",
+      "email": "mattW@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 179
+    },
+    {
+      "name": "Isabella Lewis",
+      "username": "BellaL",
+      "image": "https://via.placeholder.com/150",
+      "email": "bellaL@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 87
+    },
+    {
+      "name": "James Hall",
+      "username": "JamesH",
+      "image": "https://via.placeholder.com/150",
+      "email": "jamesH@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 129
+    },
+    {
+      "name": "Jhon Doe Doe",
+      "username": "JhonDoe",
+      "image": "https://via.placeholder.com/150",
+      "email": "jhonDoe@gmail.com",
+      "game": "Fortnite",
+      "highestScore": 152
+    }
+  ]
+}

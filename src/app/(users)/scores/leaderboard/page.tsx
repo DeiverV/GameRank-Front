@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { LeaderTable } from "./components";
 import { useSelector } from "react-redux";
 import { IRootState } from "@/src/store";
+import { Suspense } from "react";
 
 const Leaderboard: NextPage = () => {
   const topLeaderboardUsers = useSelector(
@@ -11,7 +12,9 @@ const Leaderboard: NextPage = () => {
   console.log(topLeaderboardUsers);
   return (
     <section>
-      <LeaderTable />
+      <Suspense>
+        <LeaderTable />
+      </Suspense>
     </section>
   );
 };

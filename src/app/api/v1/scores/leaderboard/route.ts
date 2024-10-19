@@ -2,11 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import data from "./data.mock.json";
 import { GetLeaderboardPayload } from "@/src/store/models";
 
+/** Returns users leaderboard */
 export async function GET(
   request: NextRequest,
   { params }: { params: GetLeaderboardPayload }
 ) {
-  const slicedData = data;
-
-  return NextResponse.json(slicedData, { status: 200 });
+  return NextResponse.json(data, { status: 200 });
 }
