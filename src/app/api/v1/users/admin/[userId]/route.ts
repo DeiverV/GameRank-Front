@@ -5,7 +5,7 @@ export async function PATCH(
   req: NextRequest,
   { params }: { params: { userId: string } }
 ) {
-  return NextResponse.json("", { status: 204 });
+  return NextResponse.json({ status: 204 });
 }
 
 /** Soft deletes an User */
@@ -13,5 +13,5 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: { userId: string } }
 ) {
-  return NextResponse.json("", { status: 204 });
+  return NextResponse.json({ status: 204 });
 }

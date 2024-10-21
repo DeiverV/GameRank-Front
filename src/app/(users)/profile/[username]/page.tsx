@@ -1,6 +1,14 @@
 "use client";
 import { NextPage } from "next";
-import { InformationCard, ScoresTable, UserInfo } from "./components";
+import {
+  AddScoreModal,
+  BlockUserModal,
+  DeleteUserModal,
+  InformationCard,
+  ScoresTable,
+  UpdateUserModal,
+  UserInfo,
+} from "./components";
 import { useGetUserDetailsQuery } from "@/src/store/services";
 import { useParams } from "next/navigation";
 
@@ -35,12 +43,22 @@ const Profile: NextPage = () => {
           </div>
         </div>
 
-        <ScoresTable />
+        <div className="grid gap-2">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-2">
+            <div className="flex gap-2 items-center">
+              <UpdateUserModal />
+              <DeleteUserModal />
+              <BlockUserModal />
+            </div>
+            <AddScoreModal />
+          </div>
+          <ScoresTable />
+        </div>
       </div>
     );
-  } else {
-    return <div>Error</div>;
   }
+
+  return <div>Error</div>;
 };
 
 export default Profile;

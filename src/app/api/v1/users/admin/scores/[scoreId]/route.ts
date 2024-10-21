@@ -5,5 +5,5 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: { scoreId: string } }
 ) {
-  return NextResponse.json("", { status: 204 });
+  return NextResponse.json({ status: 204 });
 }

@@ -1,7 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useGetLeaderboardQuery } from "@/src/store/services";
-import { Pagination } from "@nextui-org/pagination";
 import {
   getKeyValue,
   Table,
@@ -12,34 +11,38 @@ import {
   TableRow,
 } from "@nextui-org/table";
 
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { LeaderboardPlayer } from "@/src/store/models";
 import { User } from "@nextui-org/user";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setTopLeaderboardUsers } from "@/src/store/slices";
+import { CustomPagination } from "@/src/components";
+import { useSearchParams } from "next/navigation";
+
+const columns = [
+  {
+    key: "player",
+    label: "Player",
+  },
+  {
+    key: "highestScore",
+    label: "Highest Score",
+  },
+  {
+    key: "game",
+    label: "Game",
+  },
+];
 
 export const LeaderTable = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [page, setPage] = useState(parseInt(searchParams.get("page") ?? "1"));
   const dispatch = useDispatch();
-
-  const rowsPerPage = 10;
+  const searchParams = useSearchParams();
 
   const { data, isLoading, isSuccess } = useGetLeaderboardQuery({
     game: "Tetris",
-    limit: rowsPerPage,
-    page,
+    limit: parseInt(searchParams.get("limit") ?? "10"),
+    page: parseInt(searchParams.get("page") ?? "1"),
   });
-
-  useEffect(() => {
-    const query = new URLSearchParams(searchParams.toString());
-    query.set("page", page.toString());
-
-    router.replace(`${pathname}?${query.toString()}`);
-  }, [page, searchParams]);
 
   useEffect(() => {
     if (isLoading) return;
@@ -47,25 +50,6 @@ export const LeaderTable = () => {
       dispatch(setTopLeaderboardUsers(data?.data.slice(0, 3) ?? []));
     }
   }, [isLoading]);
-
-  const columns = [
-    {
-      key: "player",
-      label: "Player",
-    },
-    {
-      key: "highestScore",
-      label: "Highest Score",
-    },
-    {
-      key: "game",
-      label: "Game",
-    },
-    {
-      key: "email",
-      label: "Email",
-    },
-  ];
 
   const renderCell = (item: LeaderboardPlayer, columnKey: any) => {
     const columnValue = getKeyValue(item, columnKey);
@@ -97,27 +81,14 @@ export const LeaderTable = () => {
         th: "bg-gameRanks_primary text-white",
         wrapper: "bg-gameRanks_secondary",
       }}
-      bottomContent={
-        <Pagination
-          showControls
-          showShadow
-          classNames={{
-            base: "w-full",
-            next: "bg-gameRanks_primary",
-            prev: "bg-gameRanks_primary",
-          }}
-          page={page}
-          total={data?.totalPages ?? 0}
-          onChange={(page) => setPage(page)}
-        />
-      }
+      bottomContent={<CustomPagination total={data?.totalCount ?? 0} />}
     >
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
       <TableBody items={data?.data ?? []} isLoading={isLoading}>
         {(item) => (
-          <TableRow key={item.id}>
+          <TableRow key={item.username}>
             {(columnKey) => (
               <TableCell>{renderCell(item, columnKey)}</TableCell>
             )}

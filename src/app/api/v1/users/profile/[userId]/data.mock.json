@@ -6,6 +6,6 @@
   "email": "johndoe@example.com",
   "role": "admin",
   "rank": 1,
-  "highScore": 9800,
+  "highestScore": 9800,
   "isBlocked": false
 }

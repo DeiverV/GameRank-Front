@@ -12,8 +12,7 @@ export const LoginForm = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const res = await login(formValues);
-    console.log(res.data);
+    await login(formValues);
   };
 
   return (

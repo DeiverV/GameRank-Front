@@ -2,7 +2,7 @@ import { Pagination } from "@/src/models";
 
 export interface CreateScorePayload {
   userId: string;
-  score: string;
+  score: number;
   game: string;
 }
 

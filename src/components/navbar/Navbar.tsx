@@ -4,7 +4,7 @@ import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 export const Navbar = () => {
   return (
-    <nav className="w-full h-[54px] flex items-center bg-gameRanks_secondary px-[50px] gap-14 absolute md:static bottom-0">
+    <nav className="w-full h-[54px] flex items-center bg-gameRanks_secondary px-[50px] gap-14 fixed md:static bottom-0 z-50 ">
       <div className="hidden md:flex items-center gap-2">
         <img
           src="/appLogo.png"
