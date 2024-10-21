@@ -102,11 +102,12 @@ export const ScoresTable = () => {
         action={onDeleteScore}
       />
       <Table
+        isCompact
         aria-label="Scores Table"
         bottomContent={<CustomPagination total={data?.totalPages ?? 0} />}
         classNames={{
-          th: "bg-gameRanks_primary text-white",
-          wrapper: "bg-gameRanks_secondary",
+          th: "bg-gameRanks_secondary text-white",
+          wrapper: "bg-gameRanks_primary shadow-none",
         }}
       >
         <TableHeader columns={columns}>
@@ -114,7 +115,13 @@ export const ScoresTable = () => {
             <TableColumn key={column.key}>{column.label}</TableColumn>
           )}
         </TableHeader>
-        <TableBody items={data?.data ?? []} isLoading={isLoading}>
+        <TableBody
+          items={
+            data?.data.slice(0, parseInt(searchParams.get("limit") ?? "10")) ??
+            []
+          }
+          isLoading={isLoading}
+        >
           {(item) => (
             <TableRow key={item.id}>
               {(columnKey) => (

@@ -15,7 +15,7 @@ export interface UserDetails {
 export interface UpdateUserPayload {
   userId: string;
   username: string;
-  image: File;
+  image?: File;
 }
 
 export interface UserScore {

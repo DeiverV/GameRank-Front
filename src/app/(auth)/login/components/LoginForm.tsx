@@ -5,14 +5,20 @@ import Link from "next/link";
 import React from "react";
 import { useLoginForm } from "../hooks";
 import { useLoginMutation } from "@/src/store/services";
+import { useRouter } from "next/navigation";
 
 export const LoginForm = () => {
   const { formFields, submitButton, formValues } = useLoginForm();
-  const [login] = useLoginMutation();
+  const [login, result] = useLoginMutation();
+
+  const router = useRouter();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await login(formValues);
+    try {
+      await login(formValues);
+      router.push("/profile/4");
+    } catch {}
   };
 
   return (
@@ -23,6 +29,7 @@ export const LoginForm = () => {
         <Button
           className="bg-gameRanks_secondary text-gameRanks_neutral_1"
           type="submit"
+          isLoading={result.isLoading}
           {...submitButton}
         >
           Login

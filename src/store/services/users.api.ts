@@ -23,11 +23,21 @@ export const usersApi = createApi({
       query: (username) => `users/profile/${username}`,
     }),
     updateUser: builder.mutation<void, UpdateUserPayload>({
-      query: ({ image, username, userId }) => ({
-        url: `users/profile/${userId}`,
-        method: "POST",
-        body: { image, username },
-      }),
+      query: ({ image, username, userId }) => {
+        const formData = new FormData();
+        if (image) formData.append("file", image);
+        formData.append("username", username);
+
+        return {
+          url: `users/profile/${userId}`,
+          method: "POST",
+          headers: {
+            "Content-Type": "multipart/form-data;",
+          },
+          body: formData,
+          formData: true,
+        };
+      },
     }),
   }),
 });

@@ -26,12 +26,11 @@ export const CustomPagination = ({ total }: Props) => {
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col gap-2 items-start md:flex-row md:items-center justify-between">
       <Pagination
         classNames={{
-          wrapper:
-            "gap-0 overflow-visible h-8 rounded border border-divider bg-gameRanks_neutral_1 ",
-          item: "w-8 h-8 text-small rounded-none bg-transparent",
+          wrapper: "gap-0 overflow-visible h-8 rounded bg-gameRanks_secondary",
+          item: "w-8 h-8 text-small rounded-none bg-transparent text-default-300",
           cursor: "bg-gameRanks_primary shadow-lg text-white font-bold",
         }}
         page={parseInt(searchParams.get("page") ?? "1")}
@@ -40,7 +39,7 @@ export const CustomPagination = ({ total }: Props) => {
         size="sm"
       />
       <select
-        className="rounded text-gameRanks_primary h-8 focus:outline-none"
+        className="rounded text-default-300 bg-gameRanks_secondary h-8 focus:outline-none"
         value={parseInt(searchParams.get("limit") ?? "10")}
         onChange={(e) => onRowSizeChange(Number(e.target.value))}
       >

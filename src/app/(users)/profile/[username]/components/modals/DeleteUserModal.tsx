@@ -22,7 +22,7 @@ export const DeleteUserModal = () => {
       <Button
         size="sm"
         color="danger"
-        className="w-fit"
+        className="w-full md:w-fit"
         startContent={<BsTrash3 />}
         onPress={onOpen}
       >

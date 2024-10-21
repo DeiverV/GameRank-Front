@@ -22,7 +22,7 @@ export const BlockUserModal = () => {
       <Button
         size="sm"
         color="danger"
-        className="w-fit"
+        className="w-full md:w-fit"
         startContent={<FaBan />}
         onPress={onOpen}
       >

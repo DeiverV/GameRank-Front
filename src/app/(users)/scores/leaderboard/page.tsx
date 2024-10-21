@@ -1,18 +1,14 @@
 "use client";
 import { NextPage } from "next";
-import { LeaderTable } from "./components";
-import { useSelector } from "react-redux";
-import { IRootState } from "@/src/store";
+import { LeaderboardTop, LeaderTable } from "./components";
 import { Suspense } from "react";
 
 const Leaderboard: NextPage = () => {
-  const topLeaderboardUsers = useSelector(
-    (state: IRootState) => state.scores.topLeaderboardUsers
-  );
-  console.log(topLeaderboardUsers);
   return (
-    <section>
+    <section className="flex flex-col gap-10">
+      <h1>Leaderboard</h1>
       <Suspense>
+        <LeaderboardTop />
         <LeaderTable />
       </Suspense>
     </section>

@@ -7,30 +7,31 @@ import {
   ModalHeader,
   ModalBody,
 } from "@nextui-org/modal";
-import { useAddScoreForm } from "../../hooks";
+import { useUpdateUserForm } from "../../hooks";
 import {
-  useCreateScoreMutation,
   useGetUserDetailsQuery,
+  useUpdateUserMutation,
 } from "@/src/store/services";
 import { useParams } from "next/navigation";
 import { FaEdit } from "react-icons/fa";
+import { InputFile } from "@/src/components/input-file/InputFile";
 
 export const UpdateUserModal = () => {
-  //TODO
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const { formFields, formValues } = useAddScoreForm();
+  const { formFields, formValues } = useUpdateUserForm();
   const params = useParams<{ username: string }>();
 
   const { data, refetch } = useGetUserDetailsQuery(params.username);
-  const [createScore] = useCreateScoreMutation();
+  const [updateUser] = useUpdateUserMutation();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await createScore({
-      game: formValues.game,
-      score: formValues.score,
+    await updateUser({
+      image: formValues.image ?? undefined,
       userId: data?.id ?? "",
+      username: formValues.username,
     });
+
     onOpenChange();
     await refetch();
   };
@@ -40,24 +41,24 @@ export const UpdateUserModal = () => {
       <Button
         size="sm"
         color="primary"
-        className="w-fit"
+        className="w-full md:w-fit"
         startContent={<FaEdit />}
         onPress={onOpen}
       >
         Update User
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="lg">
         <ModalContent className="text-gameRanks_primary">
-          <ModalHeader className="flex flex-col gap-1">Add Score</ModalHeader>
+          <ModalHeader className="flex flex-col gap-1">Update User</ModalHeader>
           <ModalBody>
             <form className="grid gap-3" onSubmit={onSubmit}>
-              <Input size="sm" {...formFields.score} />
-              <Input size="sm" {...formFields.game} />
+              <Input size="sm" {...formFields.username} />
+              <InputFile {...formFields.image} />
               <Button
                 className="bg-gameRanks_secondary text-gameRanks_neutral_1"
                 type="submit"
               >
-                Add
+                Update
               </Button>
             </form>
           </ModalBody>

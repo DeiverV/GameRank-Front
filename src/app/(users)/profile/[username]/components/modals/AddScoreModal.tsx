@@ -39,7 +39,7 @@ export const AddScoreModal = () => {
       <Button
         size="sm"
         color="success"
-        className="w-fit text-white"
+        className="w-full md:w-fit text-white"
         startContent={<PiPlus />}
         onPress={onOpen}
       >

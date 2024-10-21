@@ -77,16 +77,22 @@ export const LeaderTable = () => {
   return (
     <Table
       aria-label="Scores Table"
+      isCompact
       classNames={{
-        th: "bg-gameRanks_primary text-white",
-        wrapper: "bg-gameRanks_secondary",
+        th: "bg-gameRanks_secondary text-white",
+        wrapper: "bg-gameRanks_primary shadow-none",
       }}
       bottomContent={<CustomPagination total={data?.totalCount ?? 0} />}
     >
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody items={data?.data ?? []} isLoading={isLoading}>
+      <TableBody
+        items={
+          data?.data.slice(0, parseInt(searchParams.get("limit") ?? "10")) ?? []
+        }
+        isLoading={isLoading}
+      >
         {(item) => (
           <TableRow key={item.username}>
             {(columnKey) => (
