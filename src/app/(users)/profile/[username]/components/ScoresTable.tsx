@@ -1,5 +1,7 @@
 "use client";
 import { CustomPagination, DeleteModal } from "@/src/components";
+import { RolesEnum } from "@/src/models";
+import { IRootState } from "@/src/store";
 import { UserScore } from "@/src/store/models";
 import {
   useDeleteScoreMutation,
@@ -20,29 +22,37 @@ import {
 import { useParams, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
-
-const columns = [
-  {
-    key: "score",
-    label: "Score",
-  },
-  {
-    key: "game",
-    label: "Game",
-  },
-  {
-    key: "createdAt",
-    label: "Creation Date",
-  },
-  {
-    key: "delete",
-    label: "Delete",
-  },
-];
+import { useSelector } from "react-redux";
 
 export const ScoresTable = () => {
+  const { role, username } = useSelector((state: IRootState) => state.user);
   const searchParams = useSearchParams();
   const params = useParams<{ username: string }>();
+
+  const columns = [
+    {
+      key: "score",
+      label: "Score",
+    },
+    {
+      key: "game",
+      label: "Game",
+    },
+    {
+      key: "createdAt",
+      label: "Creation Date",
+    },
+  ];
+
+  if (
+    (role === RolesEnum.ADMIN || username === params.username) &&
+    !columns.find((column) => column.key === "delete")
+  ) {
+    columns.push({
+      key: "delete",
+      label: "Delete",
+    });
+  }
 
   const {
     data,

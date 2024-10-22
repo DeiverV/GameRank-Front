@@ -31,9 +31,10 @@ export const LoginForm = () => {
   useEffect(() => {
     if (result.isSuccess) {
       const token = result.data.token;
-      const { email, id, name, username } = jwtDecode<TokenPayload>(token);
+      const { email, id, name, username, role } =
+        jwtDecode<TokenPayload>(token);
 
-      dispatch(loginInState({ email, id, name, username, token }));
+      dispatch(loginInState({ email, id, name, username, token, role }));
 
       router.push(APP_ROUTES.USERS.PROFILE.path.replace(":username", username));
     }

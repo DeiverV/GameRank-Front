@@ -1,11 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { TokenPayload } from "../models";
 
-interface SliceState {
+interface SliceState extends TokenPayload {
   token: string;
-  username: string;
-  email: string;
-  name: string;
-  id: string;
 }
 
 const initialState: SliceState = {
@@ -14,6 +11,7 @@ const initialState: SliceState = {
   email: "",
   name: "",
   id: "",
+  role: "",
 };
 
 export const userSlice = createSlice({
@@ -26,6 +24,7 @@ export const userSlice = createSlice({
       state.username = action.payload.username;
       state.id = action.payload.id;
       state.token = action.payload.token;
+      state.role = action.payload.role;
     },
     logoutInState: (state) => {
       state.email = "";
@@ -33,6 +32,7 @@ export const userSlice = createSlice({
       state.username = "";
       state.id = "";
       state.token = "";
+      state.role = "";
     },
   },
 });

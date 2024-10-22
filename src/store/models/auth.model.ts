@@ -12,6 +12,7 @@ export interface TokenPayload {
   email: string;
   id: string;
   name: string;
+  role: string;
 }
 
 export interface RegisterPayload {

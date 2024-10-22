@@ -11,9 +11,14 @@ import {
 } from "./components";
 import { useGetUserDetailsQuery } from "@/src/store/services";
 import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
+import { IRootState } from "@/src/store";
+import { RolesEnum } from "@/src/models";
 
 const Profile: NextPage = () => {
   const params = useParams<{ username: string }>();
+
+  const { role, username } = useSelector((state: IRootState) => state.user);
   const { data, isLoading, isSuccess } = useGetUserDetailsQuery(
     params.username
   );
@@ -21,6 +26,10 @@ const Profile: NextPage = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
+  const hasPermissions =
+    role === RolesEnum.ADMIN || username === params.username;
+  const canBlockOrUnblock = role === RolesEnum.ADMIN;
 
   if (isSuccess) {
     return (
@@ -46,11 +55,15 @@ const Profile: NextPage = () => {
         <div className="flex flex-col gap-2">
           <div className="flex flex-col md:flex-row items-start justify-between gap-2">
             <div className="flex gap-2 items-center flex-wrap w-full md:w-fit">
-              <UpdateUserModal />
-              <DeleteUserModal />
-              <BlockUserModal />
+              {hasPermissions && (
+                <>
+                  <UpdateUserModal />
+                  <DeleteUserModal />
+                </>
+              )}
+              {canBlockOrUnblock && <BlockUserModal />}
             </div>
-            <AddScoreModal />
+            {hasPermissions && <AddScoreModal />}
           </div>
           <ScoresTable />
         </div>
