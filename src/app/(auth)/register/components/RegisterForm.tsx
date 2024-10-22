@@ -1,4 +1,5 @@
 "use client";
+import { APP_ROUTES } from "@/src/config";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import Link from "next/link";
@@ -32,7 +33,7 @@ export const RegisterForm = () => {
 
       <Button
         as={Link}
-        href="/login"
+        href={APP_ROUTES.AUTH.LOGIN.path}
         className="bg-gameRanks_secondary text-gameRanks_neutral_1"
       >
         Log In with your account

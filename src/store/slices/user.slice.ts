@@ -16,18 +16,18 @@ const initialState: SliceState = {
   id: "",
 };
 
-export const usersSlice = createSlice({
-  name: "users",
+export const userSlice = createSlice({
+  name: "user",
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<SliceState>) => {
+    loginInState: (state, action: PayloadAction<SliceState>) => {
       state.email = action.payload.email;
       state.name = action.payload.name;
       state.username = action.payload.username;
       state.id = action.payload.id;
       state.token = action.payload.token;
     },
-    logout: (state) => {
+    logoutInState: (state) => {
       state.email = "";
       state.name = "";
       state.username = "";
@@ -37,4 +37,4 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { login, logout } = usersSlice.actions;
+export const { loginInState, logoutInState } = userSlice.actions;

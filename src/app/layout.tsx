@@ -21,7 +21,7 @@ export default function RootLayout({
       <head />
       <body className={`${poppins.className}`}>
         <Providers>
-          <main>{children}</main>
+          <main className="h-full">{children}</main>
         </Providers>
       </body>
     </html>

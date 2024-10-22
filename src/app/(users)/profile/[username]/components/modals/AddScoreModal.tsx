@@ -14,6 +14,7 @@ import {
   useGetUserDetailsQuery,
 } from "@/src/store/services";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 export const AddScoreModal = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -21,7 +22,7 @@ export const AddScoreModal = () => {
   const params = useParams<{ username: string }>();
 
   const { data, refetch } = useGetUserDetailsQuery(params.username);
-  const [createScore] = useCreateScoreMutation();
+  const [createScore, result] = useCreateScoreMutation();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -30,9 +31,14 @@ export const AddScoreModal = () => {
       score: formValues.score,
       userId: data?.id ?? "",
     });
-    onOpenChange();
-    await refetch();
   };
+
+  useEffect(() => {
+    if (result.isSuccess) {
+      onOpenChange();
+      refetch();
+    }
+  }, [result]);
 
   return (
     <>

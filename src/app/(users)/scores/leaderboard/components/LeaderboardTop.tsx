@@ -18,9 +18,9 @@ export const LeaderboardTop = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
       {topLeaderboardUsers.map(
-        ({ name, image, highestScore, username, id }, index) => (
+        ({ name, image, highestScore, username }, index) => (
           <div
-            key={id}
+            key={username}
             className={`relative grid place-items-center gap-2 w-full ${leaderPositions[index]} ${leaderOpacities[index]} md:row-start-1 `}
           >
             <div className="z-10 flex flex-row md:flex-col gap-5">

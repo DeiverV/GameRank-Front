@@ -1,6 +1,8 @@
 import { NavItem } from "./components/NavItem";
 import { PiRankingDuotone, PiUser } from "react-icons/pi";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import { APP_ROUTES } from "@/src/config";
+import { UserAvatar } from "./components/UserAvatar";
 
 export const Navbar = () => {
   return (
@@ -13,27 +15,32 @@ export const Navbar = () => {
         />
         <p className="text-1xl font-semibold">GameRanks</p>
       </div>
-      <ul className="flex gap-2 w-full md:w-fit justify-center">
-        <li>
-          <NavItem
-            icon={<PiUser size={20} />}
-            text="Profile"
-            to="/profile/4"
-          />
-        </li>
-        <li>
-          <NavItem
-            icon={<PiRankingDuotone size={20} />}
-            text="Leaderboard"
-            to="/scores/leaderboard"
-          />
-        </li>
-        <li>
-          <NavItem
-            icon={<MdOutlineAdminPanelSettings size={20} />}
-            text="Admin"
-            to="/admin/users"
-          />
+      <ul className="flex gap-2 w-full justify-between">
+        <div className="flex gap-2">
+          <li>
+            <NavItem
+              icon={<PiUser size={20} />}
+              text="Profile"
+              to={APP_ROUTES.USERS.PROFILE.path.replace(":username", "deiberv")}
+            />
+          </li>
+          <li>
+            <NavItem
+              icon={<PiRankingDuotone size={20} />}
+              text="Leaderboard"
+              to={APP_ROUTES.USERS.SCORES.LEADERBOARD.path}
+            />
+          </li>
+          <li>
+            <NavItem
+              icon={<MdOutlineAdminPanelSettings size={20} />}
+              text="Admin"
+              to={APP_ROUTES.ADMIN.USERS.path}
+            />
+          </li>
+        </div>
+        <li className="cursor-pointer">
+          <UserAvatar />
         </li>
       </ul>
     </nav>

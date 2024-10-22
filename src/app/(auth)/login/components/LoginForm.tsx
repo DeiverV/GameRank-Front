@@ -2,24 +2,43 @@
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import Link from "next/link";
-import React from "react";
 import { useLoginForm } from "../hooks";
 import { useLoginMutation } from "@/src/store/services";
 import { useRouter } from "next/navigation";
 
+import { jwtDecode } from "jwt-decode";
+import { TokenPayload } from "@/src/store/models";
+import { useDispatch } from "react-redux";
+import { loginInState } from "@/src/store/slices";
+import { APP_ROUTES } from "@/src/config";
+import { useEffect } from "react";
+
 export const LoginForm = () => {
   const { formFields, submitButton, formValues } = useLoginForm();
   const [login, result] = useLoginMutation();
-
+  const dispatch = useDispatch();
   const router = useRouter();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     try {
       await login(formValues);
-      router.push("/profile/4");
-    } catch {}
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  useEffect(() => {
+    if (result.isSuccess) {
+      const token = result.data.token;
+      const { email, id, name, username } = jwtDecode<TokenPayload>(token);
+
+      dispatch(loginInState({ email, id, name, username, token }));
+
+      router.push(APP_ROUTES.USERS.PROFILE.path.replace(":username", username));
+    }
+  }, [result]);
 
   return (
     <div className="grid gap-3">
@@ -44,7 +63,7 @@ export const LoginForm = () => {
 
       <Button
         as={Link}
-        href="/register"
+        href={APP_ROUTES.AUTH.REGISTER.path}
         className="bg-gameRanks_secondary text-gameRanks_neutral_1"
       >
         Create an account

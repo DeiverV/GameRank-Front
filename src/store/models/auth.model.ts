@@ -7,6 +7,13 @@ export interface LoginResponse {
   token: string;
 }
 
+export interface TokenPayload {
+  username: string;
+  email: string;
+  id: string;
+  name: string;
+}
+
 export interface RegisterPayload {
   email: string;
   password: string;

@@ -11,7 +11,6 @@ export interface GetLeaderboardPayload extends Pagination {
 }
 
 export interface LeaderboardPlayer {
-  id: string;
   name: string;
   username: string;
   image: string;

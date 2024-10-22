@@ -15,6 +15,7 @@ import {
 import { useParams } from "next/navigation";
 import { FaEdit } from "react-icons/fa";
 import { InputFile } from "@/src/components/input-file/InputFile";
+import { useEffect } from "react";
 
 export const UpdateUserModal = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -22,7 +23,7 @@ export const UpdateUserModal = () => {
   const params = useParams<{ username: string }>();
 
   const { data, refetch } = useGetUserDetailsQuery(params.username);
-  const [updateUser] = useUpdateUserMutation();
+  const [updateUser, result] = useUpdateUserMutation();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -31,10 +32,14 @@ export const UpdateUserModal = () => {
       userId: data?.id ?? "",
       username: formValues.username,
     });
-
-    onOpenChange();
-    await refetch();
   };
+
+  useEffect(() => {
+    if (result.isSuccess) {
+      onOpenChange();
+      refetch();
+    }
+  }, [result]);
 
   return (
     <>

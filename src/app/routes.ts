@@ -7,12 +7,12 @@ export const APP_ROUTES = {
   },
   USERS: {
     PROFILE: {
-      path: `/user/profile/:userId`,
+      path: `/profile/:username`,
       name: "User Profile",
     },
     SCORES: {
       LEADERBOARD: {
-        path: "/user/scores/leaderboard",
+        path: "/scores/leaderboard",
         name: "Leaderboard",
       },
     },

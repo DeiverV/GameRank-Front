@@ -18,6 +18,7 @@ import { useDispatch } from "react-redux";
 import { setTopLeaderboardUsers } from "@/src/store/slices";
 import { CustomPagination } from "@/src/components";
 import { useSearchParams } from "next/navigation";
+import { APP_ROUTES } from "@/src/config";
 
 const columns = [
   {
@@ -56,12 +57,20 @@ export const LeaderTable = () => {
 
     if (columnKey === "createdAt")
       return new Date(columnValue).toLocaleDateString();
+
     if (columnKey === "player") {
       return (
         <User
           name={item.name}
           description={
-            <Link href={`/profile/${item.username}`}>{item.username}</Link>
+            <Link
+              href={APP_ROUTES.USERS.PROFILE.path.replace(
+                ":username",
+                item.username
+              )}
+            >
+              {item.username}
+            </Link>
           }
           avatarProps={{
             src: item.image,
