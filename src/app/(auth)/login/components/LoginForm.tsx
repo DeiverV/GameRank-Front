@@ -14,7 +14,7 @@ import { APP_ROUTES } from "@/src/config";
 import { useEffect } from "react";
 
 export const LoginForm = () => {
-  const { formFields, submitButton, formValues } = useLoginForm();
+  const { formFields, submitButton, formValues, validateForm } = useLoginForm();
   const [login, result] = useLoginMutation();
   const dispatch = useDispatch();
   const router = useRouter();
@@ -22,11 +22,10 @@ export const LoginForm = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    try {
-      await login(formValues);
-    } catch (error) {
-      console.log(error);
-    }
+    const { isGeneralValid } = validateForm();
+    if (!isGeneralValid) return;
+
+    await login(formValues);
   };
 
   useEffect(() => {

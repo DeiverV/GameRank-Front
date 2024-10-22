@@ -1,32 +1,43 @@
 import { InputModel } from "@/src/models";
 import { LoginPayload } from "@/src/store/models";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useLoginForm = () => {
+  const [firstSubmitted, setFirstSubmitted] = useState(false);
   const [formValues, setFormValues] = useState<LoginPayload>({
     email: "",
     password: "",
   });
 
-  const [touched, setTouched] = useState({
-    email: false,
-    password: false,
+  const [isValid, setIsValid] = useState({
+    email: true,
+    password: true,
   });
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
-    setTouched((prev) => ({ ...prev, [name]: true }));
   };
 
   const validateForm = () => {
-    return {
-      isEmailValid: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
-        formValues.email
-      ),
-      isPasswordValid: formValues.password.length > 0,
-    };
+    const email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+      formValues.email
+    );
+
+    const password = formValues.password.length > 0;
+    setIsValid({
+      email,
+      password,
+    });
+
+    if (!firstSubmitted) setFirstSubmitted(true);
+
+    return { isGeneralValid: email && password };
   };
+
+  useEffect(() => {
+    if (firstSubmitted) validateForm();
+  }, [formValues]);
 
   const formFields: Record<keyof LoginPayload, InputModel> = {
     email: {
@@ -34,9 +45,9 @@ export const useLoginForm = () => {
       value: formValues.email,
       label: "Email",
       onChange: onInputChange,
-      type: "email",
+      type: "text",
       autoComplete: "email",
-      isInvalid: touched.email && !validateForm().isEmailValid,
+      isInvalid: !isValid.email,
       errorMessage: "Please enter a valid email address",
     },
     password: {
@@ -46,15 +57,14 @@ export const useLoginForm = () => {
       onChange: onInputChange,
       type: "password",
       autoComplete: "current-password",
-      isInvalid: touched.password && !validateForm().isPasswordValid,
-      required: true,
-      errorMessage: "Please enter your password"
+      isInvalid: !isValid.password,
+      errorMessage: "Please enter your password",
     },
   };
 
   const submitButton = {
-    isDisabled: !validateForm().isEmailValid || !validateForm().isPasswordValid,
+    isDisabled: !(isValid.email && isValid.password),
   };
 
-  return { formFields, submitButton, formValues };
+  return { formFields, submitButton, formValues, validateForm };
 };

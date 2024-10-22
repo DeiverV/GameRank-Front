@@ -1,5 +1,8 @@
+"use client";
 import { Navbar } from "../../components/navbar/Navbar";
-export default function UsersLayout({
+import { withSecurity } from "./security";
+
+function UsersLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -11,3 +14,5 @@ export default function UsersLayout({
     </section>
   );
 }
+
+export default withSecurity(UsersLayout);

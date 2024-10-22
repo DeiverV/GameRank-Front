@@ -1,9 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query/react";
 
 import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
-import { combineReducers } from "@reduxjs/toolkit";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  REGISTER,
+  REHYDRATE,
+} from "redux-persist";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import { adminApi, authApi, scoresApi, usersApi } from "./services";
 import { scoresSlice, userSlice } from "./slices";
@@ -28,7 +34,11 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, REGISTER],
+      },
+    }).concat([
       authApi.middleware,
       adminApi.middleware,
       usersApi.middleware,

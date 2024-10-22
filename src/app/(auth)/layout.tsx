@@ -1,8 +1,9 @@
-export default function AuthLayout({
-  children,
-}: Readonly<{
+"use client";
+import { withSecurity } from "./security";
+
+const AuthLayout: React.FC<{
   children: React.ReactNode;
-}>) {
+}> = ({ children }) => {
   return (
     <section className="h-screen w-screen bg-gradient-to-r from-gameRanks_primary to-gameRanks_secondary relative">
       {children}
@@ -19,4 +20,6 @@ export default function AuthLayout({
       </div>
     </section>
   );
-}
+};
+
+export default withSecurity(AuthLayout);
