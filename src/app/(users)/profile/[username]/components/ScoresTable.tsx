@@ -69,6 +69,7 @@ export const ScoresTable = () => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  // Molecule 
   const renderCell = (item: UserScore, columnKey: any) => {
     const columnValue = getKeyValue(item, columnKey);
 
@@ -94,6 +95,7 @@ export const ScoresTable = () => {
   };
 
   const onDeleteScore = async () => {
+    //Promise
     if (scoreIdToDelete) {
       await deleteScore(scoreIdToDelete);
       await refetchScores();

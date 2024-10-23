@@ -31,6 +31,7 @@ export const LoginForm = () => {
   useEffect(() => {
     if (result.isSuccess) {
       const token = result.data.token;
+      //move to store
       const { email, id, name, username, role } =
         jwtDecode<TokenPayload>(token);
 

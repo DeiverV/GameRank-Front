@@ -30,7 +30,7 @@ export const usersApi = createApi({
 
         return {
           url: `users/profile/${userId}`,
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "multipart/form-data;",
           },

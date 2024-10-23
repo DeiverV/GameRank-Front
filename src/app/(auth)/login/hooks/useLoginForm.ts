@@ -14,6 +14,7 @@ export const useLoginForm = () => {
     password: true,
   });
 
+  // useCallback
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
